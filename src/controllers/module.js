@@ -68,7 +68,7 @@ export const addModule = async (req, res) => {
 
     const newModule = new Module(dataToSave);
     const savedModule = await newModule.save();
-    res.status(201).json(savedModule);
+    res.status(201).json({ success:'Module added successfully', subject:savedModule });
   } catch (error) {
     console.error("Error adding module:", error);
     res.status(500).json({ error: "Internal server error" });

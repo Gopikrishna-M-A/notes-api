@@ -55,7 +55,7 @@ export const addSubject = async (req, res) => {
         console.log(data);
         const newSubject = new Subject(data)
         const savedSubject = await newSubject.save();
-        res.status(201).json(savedSubject);
+        res.status(201).json({ success: 'Subject added successfully', subject: savedSubject});
       } catch (error) {
         console.error('Error adding subject:', error);
         res.status(500).json({ error: 'Internal server error' });
