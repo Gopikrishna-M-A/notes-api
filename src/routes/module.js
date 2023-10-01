@@ -11,6 +11,7 @@ const __dirname = path.dirname(__filename);
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
       const uploadPath = path.resolve(__dirname, '..', '..', 'uploads');
+      console.log("uploadPath", uploadPath);
       cb(null, uploadPath);
   },
   filename: function (req, file, cb) {
